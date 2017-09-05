@@ -1,0 +1,164 @@
+body{
+	background-color: #E3E9FF;
+	padding: 20px 5% 0 5%;
+	font-family: 'Roboto', sans-serif;
+}
+
+.main-container{
+	width: 100%;
+	height: 150px;
+}
+
+nav{
+	width: 100%;
+	height: 60px;
+	background-color: #AF7EEB;
+	position: relative;
+	margin: 0 0 5% 0;
+}
+
+nav .menu-btn{
+	width: 60px;
+	height: 18px;
+	text-align: center;
+	padding: 21px 0;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+	color: #fff;
+}
+
+nav .header{
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	left: 0;
+	top: 0;
+	text-align: center;
+	z-index: 1;
+	line-height: 60px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.todo{
+	width: 100%;
+	padding: 40px 0;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 29px -2px rgba(138,151,185,0.29);
+	-moz-box-shadow: 0px 0px 29px -2px rgba(138,151,185,0.29);
+	box-shadow: 0px 0px 29px -2px rgba(138,151,185,0.29);
+
+}
+
+.todo .list{
+	width: 80%;
+	margin: 0 auto;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-moz-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.list:empty:after{
+	content: 'No tasks set';
+	width: 100%;
+	display: block;
+	font-size: 12px;
+	color: #aaa;
+	text-align: center;
+}
+
+.todo .list .list-item{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	font-weight: 500;
+}
+
+.todo .list .list-item .check{
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	padding: 14px;
+	z-index: 2;
+	left: 0;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-moz-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.todo .list .list-item .check .circle{
+	width: 9px;
+	height: 9px;
+	border: 2px solid #8A97B9;
+	border-radius: 9px;
+}
+.todo .list .list-item.done .check .circle{
+	background-color: #CEA6FF;
+}
+
+.todo .list .list-item input[type="text"]{
+	width: 70%;
+	border: none;
+	border-bottom: 1px solid #8A97B9;
+	outline: none;
+	font-size: 16px;
+	color: #8A97B9;
+	border-radius: 0;
+}
+
+.todo .list .list-item .task{
+	position: absolute;
+	padding: 10px 45px;
+	z-index: 1;
+	max-width: 100%;
+	box-sizing: border-box;
+	font-size: 16px;
+	color: #8A97B9;
+	overflow-x: hidden;
+}
+.todo .list .list-item.done .task{
+	text-decoration: line-through;
+	text-decoration-color: #DFE5FD;
+	color: #d4d4d4;
+}
+
+.todo .list .list-item .buttons{
+	position: absolute;
+	z-index: 2;
+	display: inline-block;
+	right: 0;
+	opacity: 0;
+	transition: all 0.2s ease-in-out;
+}
+.todo .list .list-item:hover .buttons{
+	opacity: 1;
+}
+
+.todo .list .list-item .buttons .btn{
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	float: left;
+	line-height: 40px;
+	cursor: pointer;
+}
+.todo .list .list-item .buttons .btn.tick{
+	color: #9ccc65;
+}
+.todo .list .list-item .buttons .btn.bin{
+	color: #8A97B9;
+}
+
+.add-task{
+	width: 60px;
+	height: 60px;
+	background-color: #AF7EEB;
+	margin: -30px auto 0 auto;
+	text-align: center;
+	line-height: 60px;
+	cursor: pointer;
+	color: #fff;
+	border-radius: 30px;
+	font-size: 22px;
+}

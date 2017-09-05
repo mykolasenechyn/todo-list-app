@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Task Reminder</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="main-container">
+
+	<nav>
+		<!-- <div class="menu-btn"><i class="fa fa-bars" aria-hidden="true"></i></div> -->
+		<div class="header">Website todo</div>
+	</nav>
+
+	<div class="todo">
+		<div class="list"></div>
+	</div>
+
+	<div class="add-task"><i class="fa fa-plus" aria-hidden="true"></i></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>
+<script>
+var app = new Application();
+console.log('name: ' + app.name);
+console.log('version: ' + app.version);
+</script>
+</body>
+</html>
