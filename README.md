@@ -10,4 +10,4 @@
     <li>Responsive design</li>
 </ul>
 
-<p>UI Credit: <a href="https://dribbble.com/adriengervaix">adriengervaix/a></p>
+<p>UI Credit: <a href="https://dribbble.com/adriengervaix">adriengervaix</a></p>
