@@ -2,6 +2,7 @@ body{
 	background-color: #E3E9FF;
 	padding: 20px 5% 0 5%;
 	font-family: 'Roboto', sans-serif;
+	margin: 20px 0 0 0;
 }
 
 .main-container{
@@ -106,6 +107,9 @@ nav .header{
 	color: #8A97B9;
 	border-radius: 0;
 }
+.todo .list .list-item input::placeholder{
+	color: #aaa;
+}
 
 .todo .list .list-item .task{
 	position: absolute;
@@ -161,4 +165,65 @@ nav .header{
 	color: #fff;
 	border-radius: 30px;
 	font-size: 22px;
+}
+
+.overlay{
+	width: 100%;
+	position: absolute;
+	display: none;
+	z-index: 9;
+	background: rgba(0, 0, 0, 0.5);
+	top: 0;
+	left: 0;
+	bottom: 0;
+}
+.overlay.active{
+	display: block;
+}
+
+.overlay .modal{
+	width: 260px;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 150px;
+	border-radius: 3px;
+}
+
+.overlay .modal .content{
+	width: 100%;
+	margin: 0 0 10px 0;
+	padding: 20px;
+	box-sizing: border-box;
+	text-align: center;
+	color: #aaa;
+}
+
+.overlay .modal .buttons{
+	width: 100%;
+	overflow: auto;
+}
+
+.overlay .modal .buttons .btn{
+	width: 50%;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	border: none;
+	background: none;
+	outline: none;
+	text-align: center;
+	cursor: pointer;
+	overflow-y: hidden;
+}
+
+.overlay .modal .buttons .btn:nth-child(1){
+	background-color: #fff;
+	color: #333;
+	border-bottom-left-radius: 3px;
+}
+
+.overlay .modal .buttons .btn:nth-child(2){
+	background-color: #e53935;
+	color: #fff;
+	border-bottom-right-radius: 3px;
 }

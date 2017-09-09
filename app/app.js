@@ -1,4 +1,5 @@
 (function (){
+    'use strict';
 
     window.Application = function(){
         const app = this;
@@ -49,15 +50,15 @@
             let todo_list = $('.todo .list');
             let list_item = $('<div class="list-item"></div>');
             let check = $('<div class="check"><div class="circle"></div></div>');
-            let task = $('<div class="task"><input type="text" id="new_task_input" autofocus></div>');
-            let buttons = $('<div class="buttons"><div class="btn tick" id="tick"><i class="fa fa-check" aria-hidden="true"></i></div><div class="btn bin"><i class="fa fa-trash-o" aria-hidden="true"></i></div></div>');
+            let task = $('<div class="task"><input type="text" id="new_task_input" autofocus placeholder="Enter task.."></div>');
+            let buttons = $('<div class="buttons"><div class="btn tick" id="tick"><i class="fa fa-check" aria-hidden="true"></i></div></div>');
 
             list_item.append(check);
             list_item.append(task);
             list_item.append(buttons);
 
             todo_list.prepend(list_item);
-
+            
             // save task by tick button press
             $('.list').on('click', '.tick', function(){
                 // get input text from new task item
@@ -108,11 +109,7 @@
             let task_text = $(this).closest('.list-item').children('.task').text();
             let saved_tasks = app.savedata.tasks;
 
-            // // check if saved task has done attr '[d]'
-            // if( saved_tasks[saved_tasks.indexOf(task_text)].indexOf('[d]') == -1 ){ // false
-            //     saved_tasks[saved_tasks.indexOf(task_text)] = '[d]'+task_text;
-            // }
-
+            // check if task item has done class
             if($(this).closest('.list-item').hasClass('done')){ // true
                 saved_tasks[saved_tasks.indexOf(task_text)] = '[d]'+task_text;
             } else { // false
@@ -124,20 +121,31 @@
 
         // remove task when bin button is clicked
         $('.list').on('click', '.bin',function(){
-            if(confirm('Are sure you would like to delete this task?')){
-                $(this).closest('.list-item').remove();
-                let task_text = $(this).closest('.list-item').children('.task').text();
-                let saved_tasks = app.savedata.tasks;
-
-                if($(this).closest('.list-item').hasClass('done')){ // true
-                    saved_tasks.splice(saved_tasks.indexOf('[d]'+task_text), 1);
-                } else { // false
-                    saved_tasks.splice(saved_tasks.indexOf(task_text), 1);
-                }
-
-                save_list();
-            }
+                confirm_dialog('Are sure you would like to delete this task?', this);
         });
+
+        function confirm_dialog(text, target){
+            $('.overlay').addClass('active');
+            $('.modal .content').text(text);
+
+            $('.modal .btn').on('click', function(){
+                if(this.id == 'confirm'){
+                    $(target).closest('.list-item').remove();
+                    let task_text = $(target).closest('.list-item').children('.task').text();
+                    let saved_tasks = app.savedata.tasks;
+
+                    // check if task item has done class
+                    if($(target).closest('.list-item').hasClass('done')){ // true
+                        saved_tasks.splice(saved_tasks.indexOf('[d]'+task_text), 1);
+                    } else { // false
+                        saved_tasks.splice(saved_tasks.indexOf(task_text), 1);
+                    }
+
+                    save_list();
+                }
+                $('.overlay').removeClass('active');
+            });
+        }
 
 
 		return app;

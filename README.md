@@ -1,6 +1,6 @@
 # todo-list-app
 
-<p>A simple todo list app</p>
+<p>A simple todo list app <a href="https://mykolasenechyn.github.io/todo-list-app/app">visit site</a></p>
 <p>Features:</p>
 <ul>
     <li>Check off completed tasks</li>
